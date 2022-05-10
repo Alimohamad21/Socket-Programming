@@ -1,0 +1,2 @@
+GET /index.html www.google.com HTTP/1.0
+POST /hello.html  www.google.com HTTP/1.0
