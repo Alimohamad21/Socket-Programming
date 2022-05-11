@@ -9,7 +9,6 @@ for request in f:
         request_type = fields[0]
         file_name = fields[1]
         host_name = fields[2]
-
         if len(fields) == 4:
             PORT = 80
             version_no = fields[3]
@@ -19,24 +18,14 @@ for request in f:
         s.connect((host_name, PORT))
         if request_type == 'GET':
             request = f'GET {file_name} {version_no}\r\nHost:{host_name}\r\n\r\n'
-            print(request)
             s.sendall(bytes(request, 'utf-8'))
             data = s.recv(100000).decode('utf-8')
             print(data)
-            data = data.split('\n')
-            response_code = data[0].split()[1]
-            if response_code == '200' and host_name != 'localhost':
-                data = data[14:]
-                data = '\n'.join(data)
-                print(data)
+            response_code = data.split('\n')[0].split()[1]
+            if response_code == '200':
+                body = data.split('\r\n\r\n')[1]
                 f = open(f'client{file_name}', 'wb')
-                f.write(bytes(data, 'utf-8'))
-            elif response_code == '200' and host_name == 'localhost':
-                data = data[1:]
-                data = '\n'.join(data)
-                print(data)
-                f = open(f'client{file_name}', 'wb')
-                f.write(bytes(data, 'utf-8'))
+                f.write(bytes(body, 'utf-8'))
             elif response_code == '404':
                 print(f'{file_name} at {host_name} Not Found')
         elif request_type == 'POST':
