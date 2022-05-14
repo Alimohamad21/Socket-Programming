@@ -1,2 +1,5 @@
-GET /index.html www.google.com HTTP/1.0
-POST /hello.html  www.google.com HTTP/1.0
+GET /index.html www.google.com
+GET /hello.html localhost
+GET /index.html www.google.com
+GET /hello.html localhost
+POST /post.html localhost
