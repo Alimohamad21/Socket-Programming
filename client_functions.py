@@ -37,13 +37,13 @@ def send_requests():
 
 
 def parse_request(request):
-    http_version = 'HTTP/1.1'
+    http_version = 'HTTP/1.0'
     fields = request.split()
     request_type = fields[0]
     file_name = fields[1]
     host_name = fields[2]
     if len(fields) == 4:
-        PORT = fields[3]
+        PORT = int(fields[3])
     else:
         PORT = 80
     return request_type, file_name, host_name, PORT, http_version

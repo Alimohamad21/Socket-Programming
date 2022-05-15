@@ -86,5 +86,5 @@ def handle_post_request(conn, file_name, http_version, body):
     conn.sendall(bytes(f'{http_version} 200 OK\r\n', 'utf-8'))
     f = open(f'server{file_name}', 'wb')
     f.write(bytes(body, 'utf-8'))
-    print('FILE WRITTEN TO SERVE SUCCESSFULLY\n\n')
+    print('FILE WRITTEN TO SERVER SUCCESSFULLY\n\n')
     print('-------------------------------------------\n\n')

@@ -1,3 +1,4 @@
+GET /index.html www.google.com 80
 GET / localhost
 GET /hello.html localhost
 POST /post.html localhost
@@ -7,10 +8,12 @@ GET /hello.html localhost
 POST /post.html localhost
 POST /post.html localhost
 GET / localhost
+GET /index.html www.google.com
 GET /hello.html localhost
 POST /post.html localhost
 POST /post.html localhost
-GET /post.html localhost
+GET /index.html www.google.com 80
+GET /post.html localhost 80
 GET /hello.html localhost
 GET /index.html localhost
 POST /post.html localhost

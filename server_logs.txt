@@ -1,0 +1,61 @@
+Connected by ('127.0.0.1', 50861)
+CLIENT REQUEST:
+GET / HTTP/1.0
+Host:localhost
+
+
+FILE TRANSMITTED TO CLIENT SUCCESSFULLY
+
+
+-------------------------------------------
+
+
+Connected by ('127.0.0.1', 50862)
+CLIENT REQUEST:
+GET /hello.html HTTP/1.0
+Host:localhost
+
+
+FILE TRANSMITTED TO CLIENT SUCCESSFULLY
+
+
+-------------------------------------------
+
+
+Connected by ('127.0.0.1', 50863)
+CLIENT REQUEST:
+POST /post.html HTTP/1.0
+Host:localhost
+
+<h1>POST</h1>
+POSTED DATA:
+<h1>POST</h1>
+
+FILE WRITTEN TO SERVER SUCCESSFULLY
+
+
+-------------------------------------------
+
+
+Connected by ('127.0.0.1', 50864)
+CLIENT REQUEST:
+GET /post.html HTTP/1.0
+Host:localhost
+
+
+FILE TRANSMITTED TO CLIENT SUCCESSFULLY
+
+
+-------------------------------------------
+
+
+Connected by ('127.0.0.1', 50865)
+CLIENT REQUEST:
+GET /index.html HTTP/1.0
+Host:localhost
+
+
+FILE TRANSMITTED TO CLIENT SUCCESSFULLY
+
+
+-------------------------------------------
