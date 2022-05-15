@@ -33,10 +33,11 @@ def send_requests():
                     handle_get_response(response, file_name, host_name)
                 elif request_type == 'POST':
                     handle_post_response(response)
+        print('-------------------------------------------\n\n')
 
 
 def parse_request(request):
-    http_version = 'HTTP/1.0'
+    http_version = 'HTTP/1.1'
     fields = request.split()
     request_type = fields[0]
     file_name = fields[1]
@@ -79,6 +80,8 @@ def handle_get_response(response, file_name, host_name, isCached=False):
         print(f'BODY:\n{body}')
         if not isCached:
             create_host_directory(host_name)
+            if file_name == '/':
+                file_name = '/index.html'
             f = open(f'client/{host_name}/{file_name}', 'wb')
             f.write(bytes(body, 'utf-8'))
             print('FILE WRITTEN TO CLIENT SUCCESSFULLY\n')
